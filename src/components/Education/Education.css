@@ -1,0 +1,24 @@
+#education {
+    margin: 3rem auto;
+    padding: 1rem;
+}
+
+#education h2 {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 40px;
+    font-weight: 800;
+    line-height: 36px;
+    margin: 0;
+    text-align: left;
+}
+
+#education p {
+    color: hsl(0, 0%, 100%);
+    font-family: 'Raleway', sans-serif;
+    font-size: 19px;
+    padding-left: 0.5em;
+    font-weight: 550;
+    line-height: 17px; 
+    text-align: left;
+}

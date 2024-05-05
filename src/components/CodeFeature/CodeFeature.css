@@ -1,0 +1,62 @@
+.code-snippet {
+    margin: 50px auto;
+    border-radius: 6px;
+    background-color: #2f1d43;
+    box-shadow: 0 2px 8px rgb(255, 255, 255);
+    padding: 10px;
+    overflow-x: auto;
+    
+}
+
+.code-snippet pre {
+    margin: 0;
+}
+
+.code-snippet code {
+    color: #ffffff;
+}
+
+.keyword {
+    color: rgb(58, 58, 246);
+}
+
+.variable {
+    color: rgb(86, 145, 194);
+}
+
+.value {
+    color: #008000; /* Green */
+}
+
+.if {
+    color: #e278b6;
+}
+
+.value-button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    color: #008000; /* Green */
+    cursor: pointer;
+    outline: none;
+}
+
+.send-message-button {
+    font-size: 17px;
+    border: 2px solid #ffffff;
+    color: White;
+    border-radius: 5px;
+    padding: 5px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 0;
+    background-color: #2f1d43;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.send-message-button:hover {
+    transform: scale(1.1);
+}

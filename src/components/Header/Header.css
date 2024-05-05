@@ -1,0 +1,33 @@
+header {
+    text-align: center;
+    margin: 10.5rem;
+}
+
+header img{
+    margin: 1rem 0;
+    height: 10rem;
+    width: 10rem;
+    object-fit: cover;
+}
+
+header h2 {
+    margin: 0px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 72px;
+    color: #ffffff;
+    background: linear-gradient(40deg, #be5ab2, #ffffff);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5));
+}
+
+
+
+header p {
+    margin: 8px;
+    font-size: 28px;
+    font-weight: 600;
+    color: #fcfcfc;
+    font-family: 'Roboto Condensed', sans-serif;
+}

@@ -1,0 +1,520 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  font-family: "Quicksand", sans-serif;
+  line-height: 1.5;
+  color: #ffffff;
+  background: radial-gradient(#000000, #000000);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  min-height: 80rem;
+}
+
+main {
+  width: 90%;
+  margin: auto;
+}
+
+#core-concepts {
+  margin: auto;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  box-shadow: 0 2px 8px rgb(255, 255, 255);
+}
+
+
+#core-concepts ul {
+  list-style: none;
+  padding: auto;
+  margin: auto;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+#core-concepts li {
+  margin: auto;
+}
+
+#core-concepts li img {
+  height: 4rem;
+  width: 6rem;
+  object-fit: cover;
+}
+
+#core-concepts li h3 {
+  text-align: left;
+  font-size: 1.25rem;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 0;
+}
+
+#core-concepts li p {
+  margin: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 500;
+  text-align: left;
+  font-size: 1.1rem;
+}
+
+#skills {
+  margin: 3rem auto;
+  padding: 0rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#skills h2 {
+  color: hsl(0, 0%, 100%); 
+  font-family: 'Raleway',sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0; 
+  text-align: left;
+}
+
+#skills menu {
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  gap: 0.4rem;
+  list-style: none;
+  position:relative;
+}
+
+#skills menu button {
+  padding: 0.7rem 0.5rem;
+  border: none;
+  border-radius: 6px;
+  background-color: transparent;
+  color: #d0b6eb;
+  font-family: "Roboto Condensed", sans-serif;
+  font-weight: 650;
+  font-size: 1.2rem;
+  transition: all 0.1s ease-in-out;
+  position: relative;
+
+}
+
+#skills menu button:hover {
+  background-color: #1b082f;
+  color: #ebe7ef;
+}
+
+#skills menu button.active {
+  background-color: #7925d3;
+  color: #ebe7ef;
+}
+
+
+#project-content {
+  margin: 0rem auto;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#project-content h1 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 19px;
+  padding-left: 0.5em;
+  font-weight: 550;
+  line-height: 17px;
+  margin: -2rem auto;
+  text-align: left;
+}
+
+#project-content h2 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: 0;
+  text-align: left;
+}
+
+#project-content code {
+  font-size: 1rem;
+}
+
+/* CSS */
+#project-content button {
+  background-color: #3DD1E7;
+  border: 0 solid #E5E7EB;
+  box-sizing: border-box;
+  color: #000000;
+  display: flex;
+  font-family: ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-size: 1.25rem;
+  font-weight: 500;
+  justify-content: center;
+  line-height: 1.75rem;
+  padding: .75rem 1.65rem;
+  position: relative;
+  text-align: center;
+  text-decoration: none #000000 solid;
+  text-decoration-thickness: auto;
+  width: 100%;
+  max-width: 100px;
+  position: relative;
+  cursor: pointer;
+  transform: rotate(0deg);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#project-content button:focus {
+  outline: 0;
+}
+
+#project-content button:after {
+  content: '';
+  position: absolute; 
+  border: 1px solid #000000;
+  bottom: 4px;
+  left: 4px;
+  width: calc(100% - 1px);
+  height: calc(100% - 1px);
+}
+
+#project-content button:hover:after {
+  bottom: 2px;
+  left: 2px;
+}
+
+@media (min-width: 768px) {
+#project-content button {
+    padding: .75rem 3rem;
+    font-size: 1.25rem;
+  }
+}
+
+#education {
+  margin: -2rem auto 3rem auto;
+  padding: 0rem;
+}
+
+#education div {
+  margin: 3rem auto;
+  padding: 1rem;
+  border-radius: 6px;
+  background-color: #2f1d43;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+#education li {
+  list-style-type: none;
+}
+
+#education menu {
+  margin: 1rem auto;
+  padding: 0;
+  display: flex;
+}
+
+#education h1 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 36px;
+  text-align: left;
+}
+
+#education h2 {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 70%;
+  margin: 0;
+  text-align: left;
+}
+
+#education h3 {
+  padding: 1rem 0 0.5rem 0;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 20x;
+  font-weight: 650;
+  line-height: 36px;
+  margin: 0;
+  text-align: left;
+
+}
+
+#education p {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 19px;
+  font-weight: 550;
+  line-height: 0px; 
+  text-align: left;
+}
+
+#education menu {
+  margin: 1rem 0;
+  padding: 0;
+  display: flex;
+  gap: 0.5rem;
+  list-style: none;
+}
+
+#education li {
+  margin: -2rem 0;
+  height: 12rem;
+}
+
+
+#rights-reserved{
+  margin: auto auto 3rem auto;
+  padding: 0;
+}
+
+#rights-reserved p {
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1.25rem;
+  color: #ffffff;
+}
+
+
+/* CSS */
+#new button {
+  appearance: none;
+  background-color: #d1abf3;
+  border-radius: 40em;
+  border-style: none;
+  box-shadow:  #2a0136 0 -6px 8px inset;
+  box-sizing: border-box;
+  color: #ffffff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system,sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -.24px;
+  margin: 0;
+  outline: none;
+  padding: 1rem 1.3rem;
+  quotes: auto;
+  text-align: center;
+  text-decoration: none;
+  transition: all .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+#new button:hover {
+  background-color: #d1abf3;
+  box-shadow: #2a0136 0 -6px 8px inset;
+  transform: scale(1.125);
+}
+
+#new button:active {
+  transform: scale(1.025);
+}
+
+@media (min-width: 768px) {
+  #new button {
+    font-size: 1.5rem;
+    padding: .75rem 2rem;
+  }
+}
+
+#rounded-line hr{
+  margin: -3rem auto 2rem auto;
+  border-top: 3px solid #d0b6eb;
+  border-radius: 5px;
+}
+
+#connect {
+  color: hsl(0, 0%, 100%);
+  padding: 0.4rem 0rem 4rem 0rem;
+  list-style-type: none;
+}
+
+#connect h2 {
+  padding: 1.2rem 50px;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: -2rem 0 0rem 0;
+  text-align: left;
+}
+
+#connect li {
+  margin: 0;
+  padding: 12px 72px;
+  text-align: left;
+}
+
+#connect a {
+  color: #d0b6eb;
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  text-align: left;
+}
+
+#connect div{
+  position: relative;
+}
+
+#connect a:hover {
+  background-color: #000000;
+  box-shadow: #680088 0 -6px 8px inset;
+}
+
+#connect p{
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  display: inline;
+  position: relative;
+  left: 0px;
+  bottom: 4px;
+
+}
+
+#connect img {
+  height: 1.5rem;
+  width: 1.5rem;
+  object-fit: cover;
+  background-color: #000000;
+  padding: 0px 10px 0px 0px;
+}
+
+#quick-links{
+  margin: 0rem auto 3rem auto;
+  padding: 0;
+  list-style-type: none;
+}
+
+#quick-links h2{
+  padding: 0.5rem 50px;
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  font-weight: 800;
+  line-height: 36px;
+  margin: auto;
+  text-align: left;
+}
+
+#quick-links li {
+  margin: 0;
+  padding: 8px 72px;
+  text-align: left;
+}
+
+#quick-links p {
+  color: hsl(0, 0%, 100%);
+  font-family: 'Raleway', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: left;
+  display: inline;
+  position: relative;
+  left: 0px;
+  bottom: 4px;
+  cursor: pointer;
+}
+
+#quick-links p:hover {
+  background-color: #000000;
+  box-shadow: #680088 0 -6px 8px inset;
+}
+
+#links{
+
+  margin: 0rem;
+  padding: 0.5rem;
+  list-style-type: none;
+}
+
+#links ul{
+list-style: none;
+}
+
+#links ul > li{
+  display: inline-block;
+  padding-left: 0px;
+
+}
+
+#navbar{
+  margin: 0px;
+  padding: 0px;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  text-align: center;
+  list-style-type: none;
+
+}
+
+#navbar ul{
+  padding: 0px 0px 0px 0px;
+  margin: 0px;
+  align-items: center;
+  list-style: none;
+}
+
+#navbar img{
+  padding: 0px 0px 0px 0px;
+  position: inherit;
+  pointer-events: none;
+  width: 25vmin;
+  height: auto;
+  margin-top: 0px;
+  cursor: pointer;
+}
+
+#navbar img:hover{
+  cursor: pointer;
+}
+
+#navbar li{
+  margin: 10px;
+  float: left;
+  text-align:end;
+}
+
+
+
+#navbar p:hover {
+  cursor: pointer;
+  background-color: #000000;
+  box-shadow: #680088 0 -6px 8px inset;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
