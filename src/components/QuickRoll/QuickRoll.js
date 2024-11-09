@@ -1,12 +1,5 @@
-// import { useRef } from "react";
-
 
 export default function QuickRoll({scrollToSection}){
-    // console.log('QuickRoll scrollToSection:',scrollToSection);
-    // const about = useRef(null);
-    // const skills = useRef(null);
-    // const projects = refs.projectRef;
-    // const experience = useRef(null);
 
     const hadleClick = (sectionName) => {
         console.log('hadleClick:',sectionName);

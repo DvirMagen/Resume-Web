@@ -13,6 +13,7 @@ const ProgLangSkills= forwardRef((props, ref) => {
                 <SkillButton label='JavaScript'/>
                 <SkillButton label='CSS'/>
                 <SkillButton label='HTML'/>
+                <SkillButton label='SQL'/>
             </menu>
         </section>
     )

@@ -3,7 +3,7 @@ export const EDUCATION_DATA = [
         tag: "Education",
         title: "B.sc Computer Science",
         academy: "The Academic College of Tel-Aviv-Jaffa",
-        years: "2020 - 2023"
+        years: "2020 - 2024"
     },
     {
         tag: "Experience",

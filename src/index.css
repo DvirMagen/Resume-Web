@@ -44,6 +44,7 @@ main {
 }
 
 #core-concepts li {
+  list-style: none;
   margin: auto;
 }
 
@@ -89,6 +90,7 @@ main {
   margin: 1rem 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   gap: 0.4rem;
   list-style: none;
   position:relative;
@@ -134,7 +136,7 @@ main {
   padding-left: 0.5em;
   font-weight: 550;
   line-height: 17px;
-  margin: -2rem auto;
+  margin: 0rem auto;
   text-align: left;
 }
 
@@ -206,12 +208,12 @@ main {
 }
 
 #education {
-  margin: -2rem auto 3rem auto;
+  margin: 2rem auto 2rem auto;
   padding: 0rem;
 }
 
 #education div {
-  margin: 3rem auto;
+  margin: 0rem auto;
   padding: 1rem;
   border-radius: 6px;
   background-color: #2f1d43;
@@ -223,18 +225,20 @@ main {
 }
 
 #education menu {
-  margin: 1rem auto;
+  margin: 0rem auto;
   padding: 0;
   display: flex;
 }
 
 #education h1 {
   color: hsl(0, 0%, 100%);
+  margin-bottom: 10px;
   font-family: 'Raleway', sans-serif;
   font-size: 40px;
   font-weight: 800;
   line-height: 36px;
   text-align: left;
+  margin-block-start: 0;
 }
 
 #education h2 {
@@ -242,7 +246,7 @@ main {
   font-family: 'Raleway', sans-serif;
   font-size: 36px;
   font-weight: 800;
-  line-height: 70%;
+  line-height: 100%;
   margin: 0;
   text-align: left;
 }
@@ -269,7 +273,7 @@ main {
 }
 
 #education menu {
-  margin: 1rem 0;
+  margin: 0rem 0;
   padding: 0;
   display: flex;
   gap: 0.5rem;
@@ -277,7 +281,7 @@ main {
 }
 
 #education li {
-  margin: -2rem 0;
+  margin: 0rem 0;
   height: 12rem;
 }
 
@@ -342,31 +346,30 @@ main {
 }
 
 #rounded-line hr{
-  margin: -3rem auto 2rem auto;
+  margin: 1rem auto 1rem auto;
   border-top: 3px solid #d0b6eb;
   border-radius: 5px;
 }
 
 #connect {
   color: hsl(0, 0%, 100%);
-  padding: 0.4rem 0rem 4rem 0rem;
   list-style-type: none;
 }
 
 #connect h2 {
-  padding: 1.2rem 50px;
+  padding-bottom: 0.5rem;
   color: hsl(0, 0%, 100%);
   font-family: 'Raleway', sans-serif;
   font-size: 32px;
   font-weight: 800;
   line-height: 36px;
-  margin: -2rem 0 0rem 0;
+  margin: 0rem 0 0rem 0;
   text-align: left;
 }
 
 #connect li {
   margin: 0;
-  padding: 12px 72px;
+  padding: 8px 16px;
   text-align: left;
 }
 
@@ -376,11 +379,6 @@ main {
   font-size: 1.2rem;
   font-weight: 600;
   text-decoration: none;
-  text-align: left;
-}
-
-#connect div{
-  position: relative;
 }
 
 #connect a:hover {
@@ -388,17 +386,21 @@ main {
   box-shadow: #680088 0 -6px 8px inset;
 }
 
+#connect .connect-item {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#connect .connect-item-space {
+  padding-left: 16px;
+}
+
 #connect p{
   color: hsl(0, 0%, 100%);
   font-family: 'Raleway', sans-serif;
   font-size: 1.1rem;
   font-weight: 600;
-  text-align: left;
-  display: inline;
-  position: relative;
-  left: 0px;
-  bottom: 4px;
-
 }
 
 #connect img {
@@ -410,13 +412,13 @@ main {
 }
 
 #quick-links{
-  margin: 0rem auto 3rem auto;
+  /* margin: 0rem auto 0rem auto; */
   padding: 0;
   list-style-type: none;
 }
 
 #quick-links h2{
-  padding: 0.5rem 50px;
+  padding-bottom: 0.5rem;
   color: hsl(0, 0%, 100%);
   font-family: 'Raleway', sans-serif;
   font-size: 32px;
@@ -427,8 +429,10 @@ main {
 }
 
 #quick-links li {
+  position: relative;
   margin: 0;
-  padding: 8px 72px;
+  padding: 8px 0px;
+  padding-left: 16px;
   text-align: left;
 }
 
@@ -440,8 +444,6 @@ main {
   text-align: left;
   display: inline;
   position: relative;
-  left: 0px;
-  bottom: 4px;
   cursor: pointer;
 }
 
@@ -451,20 +453,15 @@ main {
 }
 
 #links{
-
   margin: 0rem;
   padding: 0.5rem;
-  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
-#links ul{
-list-style: none;
-}
-
-#links ul > li{
-  display: inline-block;
-  padding-left: 0px;
-
+#links.space-evenly{
+  justify-content: space-evenly;
 }
 
 #navbar{

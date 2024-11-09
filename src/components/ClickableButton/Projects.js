@@ -5,7 +5,7 @@ import { forwardRef, useState } from "react";
 const Projects = forwardRef((props, ref) => {
     const [ selectedProj, setSelectedProj ] = useState();
     function handleSelect(selectedButton){
-        // selectedButton => 'abs', 'cr', 'nlp' 
+        // selectedButton => 'abs', 'cr', 'nlp' , 'weetbis'
         setSelectedProj(selectedButton);
         console.log('Button clicked ', selectedButton);
     }
@@ -31,6 +31,9 @@ const Projects = forwardRef((props, ref) => {
                 <ClickableButton isSelected={selectedProj === 'nlp'} 
                 label='NLP-clustering-project' 
                 onSelect={() => handleSelect('nlp')}/>
+                <ClickableButton isSelected={selectedProj === 'weetbis'} 
+                label='Weet&Bis' 
+                onSelect={() => handleSelect('weetbis')}/>
             </menu>
             {projectContent}
         </section>

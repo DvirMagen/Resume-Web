@@ -1,6 +1,5 @@
 #clickable {
     padding: 0rem;
-    margin: 3rem auto 5rem auto;
     text-align: left ;  
 }
 
@@ -27,6 +26,7 @@
 #clickable menu {
     padding: 0;
     display: flex; 
+    flex-wrap: wrap;
     list-style: none;
 }
 
