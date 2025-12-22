@@ -2,7 +2,7 @@ import React, {useEffect, useState, useRef} from "react";
 import './Navbar.css';
 import ThemeToggle from '../ThemeToggle/ThemeToggle';
 
-export default function Navbar_A({logo, scrollToSection, onRef}) {
+export default function NavbarA({logo, scrollToSection, onRef}) {
 
     const navbarRef = useRef(null);
 

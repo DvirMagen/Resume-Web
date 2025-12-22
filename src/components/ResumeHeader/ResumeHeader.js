@@ -13,7 +13,6 @@ import profileImage from '../../assets/profile-page.JPG';
  */
 const ResumeHeader = ({ name, title, location, email, links = {} }) => {
   const [imageLoading, setImageLoading] = useState(true);
-  const [imageError, setImageError] = useState(false);
   const imageRef = useRef(null);
 
   useEffect(() => {
@@ -32,7 +31,6 @@ const ResumeHeader = ({ name, title, location, email, links = {} }) => {
 
   const handleImageError = () => {
     setImageLoading(false);
-    setImageError(true);
   };
 
   const handleDragStart = (e) => {
@@ -88,7 +86,7 @@ const ResumeHeader = ({ name, title, location, email, links = {} }) => {
           <img 
             ref={imageRef}
             src={profileImage} 
-            alt={`${name} profile picture`}
+            alt={name}
             className={`profile-image ${imageLoading ? 'image-loading' : ''}`}
             draggable={false}
             onDragStart={handleDragStart}

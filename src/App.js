@@ -1,7 +1,7 @@
-import React, { useRef, useCallback } from 'react';
+import React, { useRef } from 'react';
 import './App.css';
 import resumeLogo from "./assets/Dvir_Magen_Resume_Logo.png";
-import Navbar_A from './components/Navbar/Navbar_A.js';
+import NavbarA from './components/Navbar/Navbar_A.js';
 import ProgLangSkills from './components/SkillsButton/ProgLangSkills.js';
 import Experience from './components/Education/Experience.js';
 import Projects from './components/ClickableButton/Projects.js';
@@ -54,13 +54,13 @@ function App() {
     });
   }
 
-  const handleNavbarRef = useCallback((navbarRef) => {
+  const handleNavbarRef = (navbarRef) => {
     sectionRefs.navbar.current = navbarRef.current;
-  }, []);
+  };
 
   return (
     <div className="App">
-      <Navbar_A onRef={handleNavbarRef} logo={resumeLogo} scrollToSection={scrollToSection}/>
+      <NavbarA onRef={handleNavbarRef} logo={resumeLogo} scrollToSection={scrollToSection}/>
       <Header ref={sectionRefs.topLine} />
       <main>
         <CoreConcepts ref={sectionRefs.about}/>
