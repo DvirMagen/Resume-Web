@@ -133,53 +133,13 @@
     font-family: 'Inter', sans-serif;
     font-size: clamp(0.8rem, 1.6vw, 0.9rem);
     font-weight: 500;
-    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: default;
     position: relative;
-    overflow: hidden;
     letter-spacing: 0.015em;
     box-shadow: 0 2px 8px var(--shadow-color);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
     line-height: 1.5;
-    /* Prevent layout shift on hover */
     margin: 0;
-    transform: translateY(0) scale(1);
-}
-
-.stack-tag::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
-    transition: left 0.6s ease;
-    z-index: 0;
-}
-
-.stack-tag::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 0;
-    height: 0;
-    border-radius: 50%;
-    background: radial-gradient(circle, rgba(208, 182, 235, 0.3), transparent);
-    transform: translate(-50%, -50%);
-    transition: width 0.4s ease, height 0.4s ease;
-    z-index: 0;
-}
-
-.stack-tag:hover::before {
-    left: 100%;
-}
-
-.stack-tag:hover::after {
-    width: 200%;
-    height: 200%;
+    transition: background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .stack-tag > * {
@@ -187,16 +147,11 @@
     z-index: 1;
 }
 
+/* Step 1: Simple hover effect - background and border color change only */
 .stack-tag:hover {
-    background: linear-gradient(135deg, rgba(121, 37, 211, 0.6), rgba(121, 37, 211, 0.45));
+    background: var(--bg-button-hover);
     border-color: var(--accent-color);
-    border-width: 1.5px; /* Keep consistent to prevent size change */
-    transform: translateY(0) scale(1); /* No transform to prevent layout shift */
-    box-shadow: 0 8px 24px rgba(208, 182, 235, 0.4), 
-                0 4px 12px rgba(121, 37, 211, 0.3),
-                inset 0 1px 0 rgba(255, 255, 255, 0.2),
-                0 0 0 0.5px rgba(208, 182, 235, 0.5); /* Simulate thicker border with shadow */
-    color: var(--text-primary);
+    box-shadow: 0 4px 12px var(--shadow-glow);
 }
 
 .project-link {

@@ -8,16 +8,20 @@ import './SkillsSection.css';
  */
 const SkillsSection = React.forwardRef((props, ref) => {
     const programmingLanguages = [
-        'C', 'C++', 'C#', 'Java', 'Python', 'JavaScript', 'TypeScript', 'CSS', 'HTML', 'SQL'
+        'C', 'C++', 'C#', 'Java', 'Python', 'JavaScript', 'TypeScript', 'CSS', 'HTML', 'SQL', 'Bash / Shell'
     ];
 
     const frameworks = [
-        'React', 'Node.js', 'Express.js', 'Spring Boot', 'Unity', 'PostgreSQL', 
-        'MongoDB', 'Postman', 'Flask', 'Django', '.NET'
+        'React', 'MUI', 'Next.js', 'Node.js', 'Express.js', 'Spring Boot', 'Unity', 'PostgreSQL', 
+        'MongoDB', 'DynamoDB', 'Postman', 'Flask', 'Django', '.NET', 'AWS Amplify', 'FastAPI'
     ];
 
     const tools = [
-        'Git', 'Azure', 'RESTful APIs', 'Sockets', 'JavaFX', 'HTTP'
+        'Git', 'GitHub', 'Azure', 'REST APIs', 'Sockets', 'JavaFX', 'HTTP', 
+        'CI/CD', 'JSON', 'Cursor', 'Vibe Coding', 'Object-Oriented Programming (OOP)', 
+        'Asynchronous Programming', 'VS Code', 'PyCharm', 'IntelliJ', 'Claude', 'Docker', 
+        'Linux', 'Data Structures', 'Algorithms', 'Cloud Fundamentals', 'DevOps Principles', 
+        'System Design Basics', 'Networking Basics', 'Testing & Automation', 'Debugging & Troubleshooting'
     ];
 
     return (

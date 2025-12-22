@@ -23,12 +23,9 @@
     color: var(--text-secondary);
     text-decoration: underline;
     font-weight: 600;
-    transition: color 0.2s ease;
 }
 
-.slash-in-link:hover {
-    color: var(--text-primary);
-}
+/* Hover effects removed to prevent Safari browser issues */
 
 .slash-in-link:focus {
     outline: 2px solid var(--accent-color);
