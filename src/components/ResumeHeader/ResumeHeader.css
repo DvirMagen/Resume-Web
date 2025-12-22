@@ -1,0 +1,329 @@
+.resume-header {
+  text-align: center;
+  margin-top: 90px;
+  margin-bottom: 1.5rem;
+  padding: 2.5rem 1.5rem;
+  position: relative;
+  overflow: visible;
+}
+
+.resume-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: linear-gradient(90deg, transparent, #d0b6eb, transparent);
+  border-radius: 2px;
+}
+
+.resume-header-content {
+  max-width: 900px;
+  margin: 0 auto;
+  overflow: visible;
+  position: relative;
+}
+
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2.5rem;
+  animation: profileFadeIn 0.6s ease-out;
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes profileFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.profile-image {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 10%;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 8px 32px var(--shadow-glow),
+              0 0 0 8px rgba(208, 182, 235, 0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  background: var(--bg-card);
+  position: relative;
+  display: block;
+}
+
+.profile-image:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 40px var(--shadow-glow),
+              0 0 0 8px rgba(208, 182, 235, 0.2);
+  border-color: var(--accent-color);
+}
+
+.resume-name {
+  margin: 0 0 0.75rem 0;
+  padding: 0.25rem 0;
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(3rem, 7vw, 5rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  background: var(--accent-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0px 4px 12px var(--shadow-glow));
+  line-height: 1.2;
+  text-transform: none;
+  transition: filter 0.3s ease;
+  display: inline-block;
+  overflow: visible;
+  position: relative;
+}
+
+.resume-title {
+  margin: 0.5rem 0 2.5rem 0;
+  font-size: clamp(1.4rem, 3.6vw, 2.1rem);
+  font-weight: 400;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.95;
+  line-height: 1.6;
+  transition: color 0.3s ease;
+  padding: 0 0.5rem;
+}
+
+.resume-contact {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.15rem);
+  font-weight: 500;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(208, 182, 235, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.contact-link:hover::before {
+  left: 100%;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  color: var(--text-primary);
+  background: var(--bg-button-hover);
+  border-color: var(--accent-color);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow-glow);
+  outline: none;
+}
+
+.contact-link:active {
+  transform: translateY(0);
+}
+
+.contact-link:focus {
+  outline: 2px solid rgba(208, 182, 235, 0.6);
+  outline-offset: 2px;
+}
+
+.contact-icon-img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(30%) saturate(500%) hue-rotate(240deg) brightness(105%) contrast(95%);
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+}
+
+.contact-link:hover .contact-icon-img {
+  filter: brightness(0) saturate(100%) invert(100%);
+  transform: scale(1.1);
+}
+
+.contact-email:hover .contact-icon-img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.contact-github:hover .contact-icon-img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.contact-linkedin:hover .contact-icon-img {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+.contact-text {
+  white-space: nowrap;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-location {
+  cursor: default;
+  background: linear-gradient(135deg, rgba(47, 29, 67, 0.4), rgba(47, 29, 67, 0.3));
+}
+
+.contact-location:hover {
+  transform: none;
+  box-shadow: none;
+  border-color: rgba(208, 182, 235, 0.3);
+}
+
+.contact-icon {
+  font-size: 1.2em;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(30%) saturate(500%) hue-rotate(240deg) brightness(105%) contrast(95%);
+}
+
+@media print {
+  .resume-header {
+    margin-top: 0;
+    padding: 1.5rem 0;
+    page-break-after: avoid;
+  }
+
+  .resume-header::before {
+    display: none;
+  }
+
+  .profile-image-container {
+    display: none;
+  }
+
+  .resume-name {
+    color: #000000;
+    -webkit-text-fill-color: #000000;
+    background: none;
+    filter: none;
+    font-size: 2.5rem;
+  }
+
+  .resume-title {
+    color: #333333;
+    font-size: 1.25rem;
+  }
+
+  .contact-link {
+    color: #000000;
+    background: transparent;
+    border: 1px solid #000000;
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+  }
+
+  .contact-link:hover,
+  .contact-link:focus {
+    transform: none;
+    box-shadow: none;
+    outline: none;
+  }
+
+  .contact-icon-img {
+    filter: brightness(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .resume-header {
+    margin-top: 80px;
+    padding: 2rem 1rem;
+  }
+
+  .profile-image {
+    width: 150px;
+    height: 150px;
+    border-width: 3px;
+    object-position: center 10%;
+  }
+
+  .profile-image-container {
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-name {
+    font-size: clamp(2.5rem, 8vw, 3.5rem);
+    line-height: 1.25;
+    padding: 0.2rem 0;
+  }
+
+  .resume-title {
+    font-size: clamp(1.15rem, 4vw, 1.5rem);
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-contact {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .contact-link {
+    width: 100%;
+    max-width: 280px;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-header {
+    padding: 1.5rem 1rem;
+  }
+
+  .profile-image {
+    width: 130px;
+    height: 130px;
+    border-width: 3px;
+    object-position: center 10%;
+  }
+
+  .profile-image-container {
+    margin-bottom: 1.25rem;
+  }
+
+  .contact-link {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.95rem;
+  }
+
+  .contact-icon-img {
+    width: 18px;
+    height: 18px;
+  }
+}
+

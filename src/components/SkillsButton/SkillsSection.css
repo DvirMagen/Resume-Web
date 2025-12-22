@@ -1,0 +1,22 @@
+/* Skills Section Container */
+#skills .section-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Ensure proper spacing between skill groups */
+#skills .skill-group {
+  margin-bottom: 2.5rem;
+}
+
+#skills .skill-group:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  #skills .skill-group {
+    margin-bottom: 2rem;
+  }
+}
+

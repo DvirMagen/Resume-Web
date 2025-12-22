@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './CodeFeature.css';
 
-const CodeSnippet = () => {
+const CodeFeature = () => {
     const [lookingForDedicatedProgrammer, setLookingForDedicatedProgrammer] = useState(true);
 
     const toggleValue = () => {
@@ -9,7 +9,6 @@ const CodeSnippet = () => {
     };
 
     const handleSendMessage = () => {
-        // Handle sending message logic here
         const email = 'Dvirmagen@gmail.com';
         const subject = 'Regarding Dedicated Programmer';
         const body = 'Dear Dvir, \n\nI am interested in discussing further about the dedicated programmer position. Could you please provide more details? \n\nBest regards,';
@@ -18,48 +17,34 @@ const CodeSnippet = () => {
     };
 
     return (
-        <div className="code-snippet">
-            <pre style={{ fontSize: 'inherit' }}>
-                <code style={{ fontSize: 'inherit' }}>
-                    <span className="keyword">boolean</span> <span className="variable">lookingForDedicatedProgrammer</span> = {''}
+        <div className="code-feature-container">
+            <pre className="code-block">
+                <code>
+                    <span className="code-keyword">boolean</span>{' '}
+                    <span className="code-variable">lookingForDedicatedProgrammer</span>{' '}
+                    ={' '}
                     <button
-                        className="value-button"
+                        className={`code-value-button ${lookingForDedicatedProgrammer ? 'value-true' : 'value-false'}`}
                         onClick={toggleValue}
-                        style={{
-                            color: lookingForDedicatedProgrammer ? 'green' : 'red',
-                            fontSize: '17px',
-                            fontWeight: '670',
-                            border: '1px solid #ffffff',
-                            borderRadius: '5px',
-                            padding: '5px'
-                        }}
+                        aria-label={`Toggle lookingForDedicatedProgrammer to ${!lookingForDedicatedProgrammer}`}
                     >
                         {String(lookingForDedicatedProgrammer)}
                     </button>;
-                    <br />
-                    <span className="if">if</span> (<span className="variable">lookingForDedicatedProgrammer</span>) {'{'}
-                    <br />
-                    &nbsp;&nbsp;<button
-                        className="send-message-button"
+                    {'\n'}
+                    <span className="code-keyword">if</span> (
+                    <span className="code-variable">lookingForDedicatedProgrammer</span>
+                    ) {'{'}
+                    {'\n'}
+                    {'  '}
+                    <button
+                        className="code-send-button"
                         onClick={handleSendMessage}
                         disabled={!lookingForDedicatedProgrammer}
-                        style={{
-                            fontSize: '17px',
-                            border: '2px solid #ffffff',
-                            color: 'White',
-                            borderRadius: '5px',
-                            padding: '5px',
-                            textAlign: 'center',
-                            textDecoration: 'none',
-                            display: 'inline-block',
-                            margin: '4px 0',
-                            backgroundColor: '#2f1d43',
-                            cursor: lookingForDedicatedProgrammer ? 'pointer' : 'not-allowed',
-                            disabled: lookingForDedicatedProgrammer ? '' : 'disabled'
-                        }}>
+                        aria-label="Send email message"
+                    >
                         send me message
                     </button>
-                    <br />
+                    {'\n'}
                     {'}'}
                 </code>
             </pre>
@@ -67,4 +52,4 @@ const CodeSnippet = () => {
     );
 };
 
-export default CodeSnippet;
+export default CodeFeature;

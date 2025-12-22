@@ -1,33 +1,31 @@
 header {
     text-align: center;
-    margin-top: 100px;
-}
-
-header img{
-    margin: 1rem 0;
-    height: 10rem;
-    width: 10rem;
-    object-fit: cover;
+    margin: 4.5rem 0 2.5rem 0;
 }
 
 header h2 {
-    margin: 0px;
+    margin: 0 0 0.5rem 0;
     font-family: 'Roboto Condensed', sans-serif;
-    font-size: 72px;
-    color: #ffffff;
-    background: linear-gradient(40deg, #be5ab2, #ffffff);
+    font-size: clamp(2.5rem, 4vw + 1.5rem, 3.75rem);
+    letter-spacing: 0.02em;
+    background: linear-gradient(40deg, #f9e8ff, #be5ab2);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     filter: drop-shadow(0px 2px 8px rgba(0, 0, 0, 0.5));
 }
 
-
-
 header p {
-    margin: 8px;
-    font-size: 28px;
+    margin: 0.25rem 0 0;
+    font-size: clamp(1.1rem, 1.1vw + 0.9rem, 1.6rem);
     font-weight: 600;
-    color: #fcfcfc;
+    color: #f3e7ff;
     font-family: 'Roboto Condensed', sans-serif;
+    opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+    header {
+        margin: 3.5rem 0 2rem 0;
+    }
 }

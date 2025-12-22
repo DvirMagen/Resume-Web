@@ -1,0 +1,185 @@
+.skill-group {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: var(--bg-card);
+  border-radius: 10px;
+  border-left: 3px solid var(--accent-color);
+  transition: all 0.3s ease;
+}
+
+.skill-group:hover {
+  background: var(--bg-card-hover);
+  border-left-color: var(--text-primary);
+  box-shadow: 0 4px 12px var(--shadow-color);
+}
+
+.skill-group:last-child {
+  margin-bottom: 0;
+}
+
+.skill-group-title {
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1.3rem, 3.2vw, 1.6rem);
+  font-weight: 700;
+  margin: 0 0 1.25rem 0;
+  text-align: left;
+  letter-spacing: -0.01em;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: color 0.3s ease;
+}
+
+.skill-group-title::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, var(--border-color), transparent);
+}
+
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.skill-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  background: var(--bg-button);
+  border: 1.5px solid var(--border-accent);
+  border-radius: 50px;
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(0.85rem, 1.8vw, 0.95rem);
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: default;
+  position: relative;
+  overflow: hidden;
+  letter-spacing: 0.015em;
+  box-shadow: 0 2px 8px var(--shadow-color);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  line-height: 1.5;
+  /* Prevent layout shift on hover */
+  margin: 0;
+  transform: translateY(0) scale(1);
+}
+
+.skill-tag::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+  z-index: 0;
+}
+
+.skill-tag::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(208, 182, 235, 0.3), transparent);
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  z-index: 0;
+}
+
+.skill-tag:hover::before {
+  left: 100%;
+}
+
+.skill-tag:hover::after {
+  width: 200%;
+  height: 200%;
+}
+
+.skill-tag > * {
+  position: relative;
+  z-index: 1;
+}
+
+.skill-tag:hover {
+  background: linear-gradient(135deg, rgba(121, 37, 211, 0.6), rgba(121, 37, 211, 0.45));
+  border-color: #d0b6eb;
+  border-width: 1.5px; /* Keep consistent to prevent size change */
+  transform: translateY(0) scale(1); /* No transform to prevent layout shift */
+  box-shadow: 0 8px 24px rgba(208, 182, 235, 0.4), 
+              0 4px 12px rgba(121, 37, 211, 0.3),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2),
+              0 0 0 0.5px rgba(208, 182, 235, 0.5); /* Simulate thicker border with shadow */
+  color: #ffffff;
+}
+
+@media print {
+  .skill-group {
+    background: transparent;
+    border-left: 2px solid #000000;
+    padding: 1rem;
+    page-break-inside: avoid;
+  }
+
+  .skill-group:hover {
+    box-shadow: none;
+    border-left-color: #000000;
+  }
+
+  .skill-group-title {
+    color: #000000;
+  }
+
+  .skill-group-title::after {
+    background: linear-gradient(90deg, #000000, transparent);
+  }
+
+  .skill-tag {
+    background: transparent;
+    border: 1.5px solid #000000;
+    border-radius: 50px;
+    color: #000000;
+    page-break-inside: avoid;
+    box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+
+  .skill-tag::before,
+  .skill-tag::after {
+    display: none;
+  }
+
+  .skill-tag:hover {
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    border-color: #000000;
+  }
+}
+
+@media (max-width: 768px) {
+  .skill-group {
+    padding: 1.25rem;
+    margin-bottom: 2rem;
+  }
+
+  .skill-tags {
+    gap: 0.65rem;
+  }
+
+  .skill-tag {
+    padding: 0.6rem 1.2rem;
+    font-size: 0.9rem;
+  }
+}
+

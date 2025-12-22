@@ -1,28 +1,22 @@
 import './Header.css';
 import { forwardRef } from 'react';
+import ResumeHeader from '../ResumeHeader/ResumeHeader';
+import { CONNECTION_DATA } from '../Connect/ConnectionData';
 
-const reactDescriptins = [
-    "A Full Stack Developer",
-    "SW && HW Developer",
-    "A Software Developer",
-    "A Web Developer"
-]
-function getRandonInt(max) {
-    return Math.floor(Math.random() * (max + 1));
-}
-
-const Header = forwardRef((props, ref)=> {
-    const description = reactDescriptins[getRandonInt(3)];
-    return ( 
-    <header ref={ref}>
-        <div>
-        <h2>Hey,<br></br>I'm Dvir Magen</h2>
-        <p>
-            {description}
-        </p>
-    </div>
-    </header>
-    )
+const Header = forwardRef((props, ref) => {
+    return (
+        <div ref={ref}>
+            <ResumeHeader
+                name="Dvir Magen"
+                title="Full Stack Developer"
+                email="Dvirmagen@gmail.com"
+                links={{
+                    github: CONNECTION_DATA.github,
+                    linkedin: CONNECTION_DATA.linkedin
+                }}
+            />
+        </div>
+    );
 });
 
 export default Header;

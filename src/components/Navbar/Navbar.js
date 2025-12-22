@@ -1,7 +1,6 @@
 export default function Navbar({logo, scrollToSection}){
 
-    const hadleClick = (sectionName) => {
-        console.log('hadleClick:',sectionName);
+    const handleClick = (sectionName) => {
         scrollToSection(sectionName);
     }
     
@@ -18,7 +17,7 @@ export default function Navbar({logo, scrollToSection}){
                     <p onClick={() => scrollToSection('skills')}>Skills</p>
                 </li>
                 <li>
-                    <p onClick={() => hadleClick('projects')}>Projects</p>
+                    <p onClick={() => handleClick('projects')}>Projects</p>
                 </li>
                 <li>
                     <p onClick={() => scrollToSection('experience')}>Experience & Education</p>

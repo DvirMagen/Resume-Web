@@ -1,43 +1,208 @@
+/* Theme Variables - Dark Mode (Default) */
+:root[data-theme="dark"],
+:root:not([data-theme]) {
+  --bg-primary: #000000;
+  --bg-secondary: #1a0b24;
+  --bg-card: rgba(47, 29, 67, 0.6);
+  --bg-card-hover: rgba(47, 29, 67, 0.7);
+  --bg-button: rgba(121, 37, 211, 0.3);
+  --bg-button-hover: rgba(121, 37, 211, 0.5);
+  --text-primary: #ffffff;
+  --text-secondary: #d0b6eb;
+  --text-muted: #d0b6eb;
+  --accent-color: #d0b6eb;
+  --accent-gradient: linear-gradient(135deg, #ffffff 0%, #d0b6eb 50%, #be5ab2 100%);
+  --border-color: rgba(208, 182, 235, 0.3);
+  --border-accent: rgba(208, 182, 235, 0.4);
+  --shadow-color: rgba(0, 0, 0, 0.5);
+  --shadow-glow: rgba(208, 182, 235, 0.3);
+  --code-text: #ffffff;
+  --code-keyword: #4dabf7;
+  --code-variable: #74c0fc;
+}
+
+/* Theme Variables - Light Mode */
+:root[data-theme="light"] {
+  --bg-primary: #f8f9fa;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255, 255, 255, 0.9);
+  --bg-card-hover: rgba(255, 255, 255, 1);
+  --bg-button: rgba(121, 37, 211, 0.1);
+  --bg-button-hover: rgba(121, 37, 211, 0.2);
+  --text-primary: #1a1a1a;
+  --text-secondary: #4a5568;
+  --text-muted: #6b7280;
+  --accent-color: #7925d3;
+  --accent-gradient: linear-gradient(135deg, #7925d3 0%, #9f7aea 50%, #be5ab2 100%);
+  --border-color: rgba(121, 37, 211, 0.2);
+  --border-accent: rgba(121, 37, 211, 0.3);
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --shadow-glow: rgba(121, 37, 211, 0.2);
+  --code-text: #1a1a1a;
+  --code-keyword: #0066cc;
+  --code-variable: #0066ff;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 16px;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
 }
 
 html {
-  font-family: "Quicksand", sans-serif;
-  line-height: 1.5;
-  color: #ffffff;
-  background: radial-gradient(#000000, #000000);
+  font-family: 'Inter', 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background: var(--bg-primary);
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
   min-height: 80rem;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 main {
-  width: 90%;
-  margin: auto;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+/* Print Styles */
+@media print {
+  * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  html {
+    background: #ffffff;
+    color: #000000;
+    font-size: 12pt;
+    min-height: auto;
+  }
+
+  body {
+    background: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    max-width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* Hide non-essential elements when printing */
+  .navbar,
+  #navbar,
+  .hamburger-menu,
+  #quick-links,
+  #links,
+  .code-snippet,
+  #rights-reserved,
+  #rounded-line {
+    display: none !important;
+  }
+
+  /* Ensure sections don't break across pages */
+  .resume-section,
+  section {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  /* Headers should not be orphaned */
+  h1, h2, h3, h4 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Links should show URLs */
+  a[href]:after {
+    content: " (" attr(href) ")";
+    font-size: 0.9em;
+    color: #666;
+  }
+
+  a[href^="mailto:"]:after {
+    content: "";
+  }
+
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Ensure proper spacing */
+  .resume-section {
+    margin-bottom: 1.5rem;
+  }
+
+  /* Remove backgrounds and shadows for print */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Ensure text is black */
+  * {
+    color: #000000 !important;
+  }
+
+  /* Borders for print */
+  .section-title {
+    border-bottom: 2px solid #000000 !important;
+  }
+
+  /* Timeline items */
+  .timeline-item {
+    border-left: 2px solid #000000 !important;
+    page-break-inside: avoid;
+  }
+
+  /* Skills tags */
+  .skill-tag,
+  .stack-tag {
+    border: 1px solid #000000 !important;
+    background: transparent !important;
+  }
 }
 
 #core-concepts {
-  margin: auto;
-  padding: 1rem;
+  margin: 3rem 0 2.5rem 0;
+  padding: 1.75rem 1.5rem;
   border-radius: 6px;
-  background-color: #2f1d43;
-  box-shadow: 0 2px 8px rgb(255, 255, 255);
+  background: radial-gradient(circle at top left, #3b2358, #2f1d43 60%, #201330);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
 }
 
 
 #core-concepts ul {
   list-style: none;
-  padding: auto;
-  margin: auto;
+  padding: 0;
+  margin: 0;
   display: flex;
   gap: 2rem;
   flex-wrap: wrap;
@@ -45,7 +210,7 @@ main {
 
 #core-concepts li {
   list-style: none;
-  margin: auto;
+  margin: 0;
 }
 
 #core-concepts li img {
@@ -69,64 +234,15 @@ main {
   font-size: 1.1rem;
 }
 
-#skills {
-  margin: 3rem auto;
-  padding: 0rem;
-  border-radius: 6px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-#skills h2 {
-  color: hsl(0, 0%, 100%); 
-  font-family: 'Raleway',sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 36px;
-  margin: 0; 
-  text-align: left;
-}
-
-#skills menu {
-  margin: 1rem 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.4rem;
-  list-style: none;
-  position:relative;
-}
-
-#skills menu button {
-  padding: 0.7rem 0.5rem;
-  border: none;
-  border-radius: 6px;
-  background-color: transparent;
-  color: #d0b6eb;
-  font-family: "Roboto Condensed", sans-serif;
-  font-weight: 650;
-  font-size: 1.2rem;
-  transition: all 0.1s ease-in-out;
-  position: relative;
-
-}
-
-#skills menu button:hover {
-  background-color: #1b082f;
-  color: #ebe7ef;
-}
-
-#skills menu button.active {
-  background-color: #7925d3;
-  color: #ebe7ef;
-}
+/* Old #skills styles removed - now using SkillGroup component styles for consistency */
 
 
 #project-content {
-  margin: 0rem auto;
-  padding: 1rem;
+  margin: 1.5rem 0 0;
+  padding: 1.5rem 1.5rem 1.25rem;
   border-radius: 6px;
-  background-color: #2f1d43;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: radial-gradient(circle at top left, #3b2358, #2f1d43 60%, #201330);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.65);
 }
 
 #project-content h1 {
@@ -207,87 +323,11 @@ main {
   }
 }
 
-#education {
-  margin: 2rem auto 2rem auto;
-  padding: 0rem;
-}
-
-#education div {
-  margin: 0rem auto;
-  padding: 1rem;
-  border-radius: 6px;
-  background-color: #2f1d43;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
-}
-
-#education li {
-  list-style-type: none;
-}
-
-#education menu {
-  margin: 0rem auto;
-  padding: 0;
-  display: flex;
-}
-
-#education h1 {
-  color: hsl(0, 0%, 100%);
-  margin-bottom: 10px;
-  font-family: 'Raleway', sans-serif;
-  font-size: 40px;
-  font-weight: 800;
-  line-height: 36px;
-  text-align: left;
-  margin-block-start: 0;
-}
-
-#education h2 {
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 36px;
-  font-weight: 800;
-  line-height: 100%;
-  margin: 0;
-  text-align: left;
-}
-
-#education h3 {
-  padding: 1rem 0 0.5rem 0;
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 20x;
-  font-weight: 650;
-  line-height: 36px;
-  margin: 0;
-  text-align: left;
-
-}
-
-#education p {
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 19px;
-  font-weight: 550;
-  line-height: 0px; 
-  text-align: left;
-}
-
-#education menu {
-  margin: 0rem 0;
-  padding: 0;
-  display: flex;
-  gap: 0.5rem;
-  list-style: none;
-}
-
-#education li {
-  margin: 0rem 0;
-  height: 12rem;
-}
+/* Old #education styles removed - now using TimelineItem component styles for consistency with Experience section */
 
 
 #rights-reserved{
-  margin: auto auto 3rem auto;
+  margin: 3rem auto 0 auto;
   padding: 0;
 }
 
@@ -297,7 +337,8 @@ main {
   font-size: 17px;
   font-weight: 400;
   line-height: 1.25rem;
-  color: #ffffff;
+  color: var(--text-primary);
+  transition: color 0.3s ease;
 }
 
 
@@ -346,169 +387,16 @@ main {
 }
 
 #rounded-line hr{
-  margin: 1rem auto 1rem auto;
+  margin: 2.5rem auto;
   border-top: 3px solid #d0b6eb;
   border-radius: 5px;
 }
 
-#connect {
-  color: hsl(0, 0%, 100%);
-  list-style-type: none;
-}
+/* Old #connect and #quick-links styles removed - now using component-specific CSS files */
 
-#connect h2 {
-  padding-bottom: 0.5rem;
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 36px;
-  margin: 0rem 0 0rem 0;
-  text-align: left;
-}
+/* Old #links styles removed - now using Links component CSS */
 
-#connect li {
-  margin: 0;
-  padding: 8px 16px;
-  text-align: left;
-}
-
-#connect a {
-  color: #d0b6eb;
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-#connect a:hover {
-  background-color: #000000;
-  box-shadow: #680088 0 -6px 8px inset;
-}
-
-#connect .connect-item {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-#connect .connect-item-space {
-  padding-left: 16px;
-}
-
-#connect p{
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-
-#connect img {
-  height: 1.5rem;
-  width: 1.5rem;
-  object-fit: cover;
-  background-color: #000000;
-  padding: 0px 10px 0px 0px;
-}
-
-#quick-links{
-  /* margin: 0rem auto 0rem auto; */
-  padding: 0;
-  list-style-type: none;
-}
-
-#quick-links h2{
-  padding-bottom: 0.5rem;
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 32px;
-  font-weight: 800;
-  line-height: 36px;
-  margin: auto;
-  text-align: left;
-}
-
-#quick-links li {
-  position: relative;
-  margin: 0;
-  padding: 8px 0px;
-  padding-left: 16px;
-  text-align: left;
-}
-
-#quick-links p {
-  color: hsl(0, 0%, 100%);
-  font-family: 'Raleway', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: left;
-  display: inline;
-  position: relative;
-  cursor: pointer;
-}
-
-#quick-links p:hover {
-  background-color: #000000;
-  box-shadow: #680088 0 -6px 8px inset;
-}
-
-#links{
-  margin: 0rem;
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-#links.space-evenly{
-  justify-content: space-evenly;
-}
-
-#navbar{
-  margin: 0px;
-  padding: 0px;
-  position: absolute;
-  top: 0;
-  width: 100%;
-  text-align: center;
-  list-style-type: none;
-
-}
-
-#navbar ul{
-  padding: 0px 0px 0px 0px;
-  margin: 0px;
-  align-items: center;
-  list-style: none;
-}
-
-#navbar img{
-  padding: 0px 0px 0px 0px;
-  position: inherit;
-  pointer-events: none;
-  width: 25vmin;
-  height: auto;
-  margin-top: 0px;
-  cursor: pointer;
-}
-
-#navbar img:hover{
-  cursor: pointer;
-}
-
-#navbar li{
-  margin: 10px;
-  float: left;
-  text-align:end;
-}
-
-
-
-#navbar p:hover {
-  cursor: pointer;
-  background-color: #000000;
-  box-shadow: #680088 0 -6px 8px inset;
-}
+/* Old #navbar styles removed - now using .navbar component styles */
 
 
 code {

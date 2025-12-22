@@ -1,0 +1,68 @@
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  margin-left: 1rem;
+  background: linear-gradient(135deg, rgba(121, 37, 211, 0.3), rgba(121, 37, 211, 0.2));
+  border: 1.5px solid rgba(208, 182, 235, 0.4);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: linear-gradient(135deg, rgba(121, 37, 211, 0.5), rgba(121, 37, 211, 0.35));
+  border-color: var(--accent-color);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(208, 182, 235, 0.3);
+}
+
+.theme-toggle:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.theme-toggle-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  transition: transform 0.3s ease;
+  color: var(--text-secondary);
+}
+
+.theme-toggle-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  filter: drop-shadow(0 2px 4px var(--shadow-glow));
+  transition: all 0.3s ease;
+}
+
+.theme-toggle:hover .theme-toggle-icon {
+  transform: rotate(15deg) scale(1.1);
+  color: var(--accent-color);
+}
+
+.theme-toggle:hover .theme-toggle-icon svg {
+  filter: drop-shadow(0 4px 8px var(--shadow-glow));
+}
+
+@media (max-width: 900px) {
+  .theme-toggle {
+    width: 36px;
+    height: 36px;
+    margin-left: 0.75rem;
+  }
+
+  .theme-toggle-icon svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
