@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/Resume-Web/static/css/main.e10e07bf.css",
-    "main.js": "/Resume-Web/static/js/main.1fa0f560.js",
+    "main.css": "/Resume-Web/static/css/main.48cc76a4.css",
+    "main.js": "/Resume-Web/static/js/main.d6fa62aa.js",
     "static/js/453.0472fe85.chunk.js": "/Resume-Web/static/js/453.0472fe85.chunk.js",
+    "static/media/profile-page.JPG": "/Resume-Web/static/media/profile-page.96a71eb9e74744033df7.JPG",
     "static/media/Dvir_Magen_Resume_Logo.png": "/Resume-Web/static/media/Dvir_Magen_Resume_Logo.3073edc47adf6669e63e.png",
     "index.html": "/Resume-Web/index.html",
     "static/media/github-logo.svg": "/Resume-Web/static/media/github-logo.a013fa989b433416528d9154544e4423.svg",
     "static/media/linkedin-logo.svg": "/Resume-Web/static/media/linkedin-logo.b69a9637c8e2e0204cf024d5bfa61175.svg",
     "static/media/email-logo.svg": "/Resume-Web/static/media/email-logo.b814fd4ed6c5b0c12abde40f95428318.svg",
-    "main.e10e07bf.css.map": "/Resume-Web/static/css/main.e10e07bf.css.map",
-    "main.1fa0f560.js.map": "/Resume-Web/static/js/main.1fa0f560.js.map",
+    "main.48cc76a4.css.map": "/Resume-Web/static/css/main.48cc76a4.css.map",
+    "main.d6fa62aa.js.map": "/Resume-Web/static/js/main.d6fa62aa.js.map",
     "453.0472fe85.chunk.js.map": "/Resume-Web/static/js/453.0472fe85.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e10e07bf.css",
-    "static/js/main.1fa0f560.js"
+    "static/css/main.48cc76a4.css",
+    "static/js/main.d6fa62aa.js"
   ]
 }
