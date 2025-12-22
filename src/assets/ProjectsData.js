@@ -9,7 +9,7 @@ export const CORE_PROJECTS = {
             "Created web server using Node.js with efficient database operations",
             "Implemented two communication protocols, including Socket-based online mode for real-time multiplayer interaction"
         ],
-        stack: ["Java", "Unity", "C#", "Node.js", "Azure", "Sockets"],
+        stack: ["C#", "Unity", "Java", "Node.js", "Sockets", "Azure"],
         url: 'https://github.com/DvirMagen/CosmicRace'
     },
     abs: {

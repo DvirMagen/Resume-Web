@@ -25,3 +25,4 @@ const SkillGroup = ({ title, skills = [] }) => {
 
 export default SkillGroup;
 
+

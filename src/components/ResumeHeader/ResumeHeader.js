@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './ResumeHeader.css';
 import { CONNECTION_DATA } from '../Connect/ConnectionData';
 import profileImage from '../../assets/profile-page.JPG';
@@ -12,14 +12,93 @@ import profileImage from '../../assets/profile-page.JPG';
  * @param {Object} links - Object with github, linkedin, etc.
  */
 const ResumeHeader = ({ name, title, location, email, links = {} }) => {
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
+  const imageRef = useRef(null);
+
+  useEffect(() => {
+    // Ensure image is not draggable via DOM manipulation
+    if (imageRef.current) {
+      imageRef.current.setAttribute('draggable', 'false');
+      imageRef.current.ondragstart = () => false;
+      imageRef.current.ondrag = () => false;
+      imageRef.current.ondragend = () => false;
+    }
+  }, [imageLoading]);
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoading(false);
+    setImageError(true);
+  };
+
+  const handleDragStart = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  const handleDrag = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  const handleDragEnd = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  const handleContextMenu = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    return false;
+  };
+
+  const handleMouseDown = (e) => {
+    // Prevent image selection
+    e.preventDefault();
+    return false;
+  };
+
+  const handleSelectStart = (e) => {
+    e.preventDefault();
+    return false;
+  };
+
   return (
     <header className="resume-header">
       <div className="resume-header-content">
-        <div className="profile-image-container">
+        <div 
+          className="profile-image-container"
+          onDragStart={(e) => e.preventDefault()}
+          onDrag={(e) => e.preventDefault()}
+          onDragEnd={(e) => e.preventDefault()}
+          onContextMenu={(e) => e.preventDefault()}
+        >
+          {imageLoading && (
+            <div className="image-loader">
+              <div className="loader-spinner"></div>
+            </div>
+          )}
           <img 
+            ref={imageRef}
             src={profileImage} 
             alt={`${name} profile picture`}
-            className="profile-image"
+            className={`profile-image ${imageLoading ? 'image-loading' : ''}`}
+            draggable={false}
+            onDragStart={handleDragStart}
+            onDrag={handleDrag}
+            onDragEnd={handleDragEnd}
+            onContextMenu={handleContextMenu}
+            onMouseDown={handleMouseDown}
+            onSelectStart={handleSelectStart}
+            onLoad={handleImageLoad}
+            onError={handleImageError}
           />
         </div>
         <h1 className="resume-name">{name}</h1>

@@ -13,7 +13,7 @@ const ProjectsSection = React.forwardRef((props, ref) => {
         setSelectedProj(selectedProj === projectKey ? null : projectKey);
     };
 
-    const projectKeys = ['abs', 'cr', 'nlp', 'weetbis'];
+    const projectKeys = ['cr', 'abs', 'nlp', 'weetbis'];
     const projectLabels = {
         'abs': 'Alternative Banking System',
         'cr': 'Cosmic Race',
@@ -92,4 +92,5 @@ const ProjectsSection = React.forwardRef((props, ref) => {
 ProjectsSection.displayName = 'ProjectsSection';
 
 export default ProjectsSection;
+
 
