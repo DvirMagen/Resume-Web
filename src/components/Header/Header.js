@@ -8,7 +8,7 @@ const Header = forwardRef((props, ref) => {
         <div ref={ref}>
             <ResumeHeader
                 name="Dvir Magen"
-                title="Full Stack Developer AI Engineer"
+                title="Full Stack Developer"
                 email="Dvirmagen@gmail.com"
                 links={{
                     github: CONNECTION_DATA.github,
