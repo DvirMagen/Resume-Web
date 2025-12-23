@@ -22,4 +22,3 @@ const Section = React.forwardRef(({ id, title, children, className = '' }, ref) 
 Section.displayName = 'Section';
 
 export default Section;
-

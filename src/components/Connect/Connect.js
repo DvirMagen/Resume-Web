@@ -1,4 +1,4 @@
-import { CONNECTION_DATA } from "./ConnectionData";
+import { CONNECTION_DATA } from "../../constants";
 import { GitHub, LinkedIn, Email } from '@mui/icons-material';
 import './Connect.css';
 

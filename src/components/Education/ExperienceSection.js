@@ -1,7 +1,7 @@
 import React from 'react';
 import Section from '../Section/Section';
 import TimelineItem from '../TimelineItem/TimelineItem';
-import { EXPERIENCE_DATA } from './EducationData';
+import { EXPERIENCE_DATA } from '../../constants';
 
 /**
  * Experience section component
@@ -27,4 +27,3 @@ const ExperienceSection = React.forwardRef((props, ref) => {
 ExperienceSection.displayName = 'ExperienceSection';
 
 export default ExperienceSection;
-

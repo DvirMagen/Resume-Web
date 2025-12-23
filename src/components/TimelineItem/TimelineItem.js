@@ -61,4 +61,3 @@ const TimelineItem = ({ title, organization, period, description, achievements =
 };
 
 export default TimelineItem;
-

@@ -36,4 +36,3 @@ const SkillsSection = React.forwardRef((props, ref) => {
 SkillsSection.displayName = 'SkillsSection';
 
 export default SkillsSection;
-

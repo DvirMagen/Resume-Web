@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './ResumeHeader.css';
-import { CONNECTION_DATA } from '../Connect/ConnectionData';
+import { CONNECTION_DATA } from '../../constants';
 import profileImage from '../../assets/profile-page.JPG';
 
 /**
@@ -161,4 +161,3 @@ const ResumeHeader = ({ name, title, location, email, links = {} }) => {
 };
 
 export default ResumeHeader;
-

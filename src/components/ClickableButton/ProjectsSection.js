@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Section from '../Section/Section';
-import { CORE_PROJECTS } from '../../assets/ProjectsData';
+import { CORE_PROJECTS } from '../../constants';
 import './ProjectsSection.css';
 
 /**
@@ -92,5 +92,3 @@ const ProjectsSection = React.forwardRef((props, ref) => {
 ProjectsSection.displayName = 'ProjectsSection';
 
 export default ProjectsSection;
-
-
