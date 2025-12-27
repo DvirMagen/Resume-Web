@@ -11,6 +11,9 @@ jobs:
     # Note: API URL is configured in src/utils/sendEmail.js
     # No environment variables needed for frontend build
     # API is hosted separately on Vercel at: https://contact-api-indol.vercel.app
+    
+    env:
+      CUSTOM_DOMAIN: dvirmagen.com  # Change this to update your custom domain
 
     steps:
       - name: Checkout source repo
@@ -26,6 +29,12 @@ jobs:
 
       - name: Build project
         run: npm run build
+
+      - name: Set custom domain (CNAME)
+        run: |
+          echo "${{ env.CUSTOM_DOMAIN }}" > build/CNAME
+          echo "CNAME file set to ${{ env.CUSTOM_DOMAIN }}"
+        shell: bash
 
       - name: Deploy to user site repo
         uses: peaceiris/actions-gh-pages@v3
