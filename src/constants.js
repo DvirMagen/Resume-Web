@@ -31,6 +31,10 @@ export const CONNECTION_DATA = {
     logo: emailLogo,
     url: "mailto:Dvirmagen@Gmail.com",
   },
+  cv: {
+    title: "Download CV",
+    url: "/Dvir-Magen_Resume.pdf",
+  },
 };
 
 // Education & experience timeline data

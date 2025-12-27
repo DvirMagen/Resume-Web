@@ -1,0 +1,389 @@
+.contact-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  border: 1.5px solid var(--border-color);
+  background: var(--bg-card);
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+  font-size: clamp(1rem, 2.2vw, 1.05rem);
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  transition: all 0.25s ease;
+}
+
+.contact-button:hover,
+.contact-button:focus {
+  background: var(--accent-color);
+  color: #0b1220;
+  border-color: var(--accent-color);
+  box-shadow: 0 8px 20px var(--shadow-glow);
+  transform: translateY(-1px);
+  outline: none;
+}
+
+.contact-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.35);
+}
+
+.contact-button.header-contact-button {
+  margin-bottom: 1rem;
+}
+
+.contact-button.connect-contact-button {
+  align-self: flex-start;
+  margin-bottom: 1rem;
+}
+
+.contact-button-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-button-icon-img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+/* Shared message modal styles (reused by CodeFeature and Contact buttons) */
+.message-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  overflow: hidden;
+  touch-action: none;
+  overscroll-behavior: contain;
+}
+
+.message-modal {
+  width: 100%;
+  max-width: 480px;
+  /* Use fully opaque background that matches theme */
+  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.75);
+  border: 1px solid var(--border-color);
+  padding: 1.5rem 1.75rem;
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1000;
+  opacity: 1;
+}
+
+.message-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.message-modal-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.message-modal-close {
+  border: none;
+  background: transparent;
+  color: var(--text-secondary, #9ca3af);
+  font-size: 1.3rem;
+  font-weight: 300;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.message-modal-close:hover {
+  background: var(--bg-button-hover, rgba(121, 37, 211, 0.1));
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.message-modal-close:active {
+  transform: translateY(0);
+}
+
+.message-modal-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  text-align: left;
+  align-items: stretch;
+}
+
+.message-modal-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.85rem;
+  color: var(--text-secondary, #9ca3af);
+  text-align: left;
+  align-items: flex-start;
+}
+
+.message-modal-input,
+.message-modal-textarea {
+  width: 100%;
+  padding: 0.6rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-primary, #020617);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.9rem;
+  resize: vertical;
+  min-height: 2.5rem;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.message-modal-input::placeholder,
+.message-modal-textarea::placeholder {
+  color: var(--text-muted, #6b7280);
+}
+
+.message-modal-input:focus,
+.message-modal-textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 1px var(--accent-color);
+}
+
+.message-modal-input-error,
+.message-modal-textarea-error {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.message-modal-input-error:focus,
+.message-modal-textarea-error:focus {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 1px #ef4444;
+}
+
+.message-modal-textarea {
+  min-height: 140px;
+}
+
+.message-modal-error {
+  background-color: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #ef4444;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: 'Raleway', sans-serif;
+}
+
+.message-modal-help-text {
+  display: block;
+  font-size: 0.8rem;
+  color: #ef4444;
+  margin-top: 0.25rem;
+  line-height: 1.4;
+}
+
+.message-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.message-modal-secondary,
+.message-modal-primary {
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  font-family: 'Raleway', sans-serif;
+  cursor: pointer;
+  border: 1.5px solid transparent;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100px;
+}
+
+.message-modal-secondary {
+  background: transparent;
+  border-color: var(--border-color);
+  color: var(--text-primary);
+}
+
+.message-modal-secondary:hover {
+  background: var(--bg-button-hover);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px var(--shadow-glow);
+}
+
+.message-modal-secondary:active {
+  transform: translateY(0);
+}
+
+.message-modal-primary {
+  background: var(--bg-button);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  box-shadow: 0 4px 16px var(--shadow-glow);
+}
+
+.message-modal-primary:hover {
+  background: var(--bg-button-hover);
+  border-color: var(--accent-color);
+  color: var(--text-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px var(--shadow-glow);
+}
+
+.message-modal-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 8px var(--shadow-glow);
+}
+
+.message-modal-primary:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.message-modal-actions-center {
+  justify-content: center;
+}
+
+.message-modal-success {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  text-align: center;
+  align-items: stretch;
+  animation: successFadeIn 0.4s ease-out;
+}
+
+.message-modal-success-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 1rem 0;
+}
+
+.message-modal-success-title {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  font-family: 'Raleway', sans-serif;
+}
+
+.message-modal-success-message {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-family: 'Inter', sans-serif;
+}
+
+@keyframes successFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .message-modal {
+    max-width: 90%;
+    padding: 1.25rem 1.25rem;
+  }
+}
+
+/* Toast notification */
+.toast-message {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10000;
+  animation: toastSlideIn 0.3s ease-out;
+  pointer-events: none;
+}
+
+.toast-message-content {
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-color);
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--accent-color);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 300px;
+  max-width: 90vw;
+}
+
+.toast-message-text {
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+@keyframes toastSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+}
+
+@keyframes toastSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-20px);
+  }
+}
+
+

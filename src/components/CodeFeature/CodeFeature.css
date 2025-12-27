@@ -173,7 +173,6 @@
         box-shadow: none;
     }
 }
-
 @media (max-width: 768px) {
     .code-feature-container {
         padding: 1.5rem;

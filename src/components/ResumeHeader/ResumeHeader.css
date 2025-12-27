@@ -105,7 +105,6 @@
   -khtml-user-drag: none;
   -moz-user-drag: none;
   -o-user-drag: none;
-  user-drag: none;
   -webkit-touch-callout: none;
   -webkit-tap-highlight-color: transparent;
   pointer-events: auto;
@@ -158,12 +157,50 @@
 }
 
 .resume-contact {
+  /* Use flex with fixed-width chips so all buttons have exactly the same width/height */
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 1.25rem;
   margin-top: 2rem;
+  position: relative;
+  overflow: visible;
+}
+
+.contact-message {
+  /* Ensure message button visually matches other contact chips */
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+}
+
+.contact-message .contact-button-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  /* Match other header icons using the same filter and hover behavior */
+  filter: brightness(0) saturate(100%) invert(85%) sepia(30%) saturate(500%) hue-rotate(240deg) brightness(105%) contrast(95%);
+  transition: all 0.3s ease;
+}
+
+.contact-link.contact-message:hover .contact-button-icon svg,
+.contact-link.contact-message:focus .contact-button-icon svg {
+  filter: brightness(0) saturate(100%) invert(100%);
+}
+
+/* CV download icon (lucide Download) – match other icons and hover behavior */
+.contact-cv .contact-button-icon svg {
+  width: 20px;
+  height: 20px;
+  stroke-width: 2;
+  filter: brightness(0) saturate(100%) invert(85%) sepia(30%) saturate(500%) hue-rotate(240deg) brightness(105%) contrast(95%);
+  transition: all 0.3s ease;
+}
+
+.contact-link.contact-cv:hover .contact-button-icon svg,
+.contact-link.contact-cv:focus .contact-button-icon svg {
+  filter: brightness(0) saturate(100%) invert(100%);
 }
 
 .contact-link {
@@ -179,9 +216,20 @@
   background: var(--bg-card);
   border: 1.5px solid var(--border-color);
   border-radius: 12px;
+  box-sizing: border-box;
+  height: 3.25rem; /* fixed height so all header buttons are the same on every viewport */
+  width: 300px; /* slightly larger fixed width so all header buttons are exactly the same size */
+  justify-content: center; /* center icon + text as a group */
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
+  cursor: pointer;
+}
+
+button.contact-link {
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-color);
+  padding: 0.75rem 1.5rem;
 }
 
 .contact-link::before {
@@ -193,7 +241,10 @@
   height: 100%;
   background: linear-gradient(90deg, transparent, rgba(208, 182, 235, 0.2), transparent);
   transition: left 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
 }
+
 
 .contact-link:hover::before {
   left: 100%;
@@ -248,6 +299,55 @@
   white-space: nowrap;
   position: relative;
   z-index: 1;
+}
+
+.email-button-wrapper {
+  position: relative;
+  display: inline-block;
+  width: 300px;
+  height: 3.25rem;
+}
+
+.email-button-wrapper .copy-tooltip {
+  position: absolute;
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent-color);
+  color: var(--bg-primary);
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  white-space: nowrap;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  animation: tooltipFadeIn 0.2s ease-out;
+  pointer-events: none;
+}
+
+.email-button-wrapper .copy-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid var(--accent-color);
+}
+
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) translateY(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
 }
 
 .contact-location {
@@ -340,11 +440,6 @@
   .resume-title {
     font-size: clamp(1.15rem, 4vw, 1.5rem);
     margin-bottom: 1.5rem;
-  }
-
-  .resume-contact {
-    flex-direction: column;
-    gap: 1rem;
   }
 
   .contact-link {

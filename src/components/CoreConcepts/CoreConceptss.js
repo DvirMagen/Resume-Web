@@ -5,4 +5,6 @@ const CoreConcepts = forwardRef((props, ref) => {
     return <About ref={ref} />
 });
 
+CoreConcepts.displayName = 'CoreConcepts';
+
 export default CoreConcepts;

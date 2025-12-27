@@ -21,3 +21,10 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+.env
+
+# Documentation files (not needed for production)
+*.md
+!README.md

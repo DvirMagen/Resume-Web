@@ -32,7 +32,9 @@ function App() {
   const scrollToSection = (elementRef) => {
     // Validate elementRef exists in sectionRefs
     if (!elementRef || !sectionRefs[elementRef]) {
-      console.warn(`Invalid section reference: ${elementRef}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`Invalid section reference: ${elementRef}`);
+      }
       return;
     }
 
@@ -41,7 +43,9 @@ function App() {
     const navbarRef = sectionRefs.navbar.current;
 
     if (!targetRef) {
-      console.warn(`Section ref not available: ${elementRef}`);
+      if (process.env.NODE_ENV === 'development') {
+        console.warn(`Section ref not available: ${elementRef}`);
+      }
       return;
     }
 

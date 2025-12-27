@@ -51,6 +51,16 @@
   position: relative;
   letter-spacing: 0.01em;
   line-height: 1.6;
+  cursor: pointer;
+}
+
+button.connect-link {
+  background: transparent;
+  border: none;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  text-align: left;
 }
 
 .connect-link::after {
@@ -69,11 +79,54 @@
   transform: translateX(0);
 }
 
+.connect-link-email::after,
+.connect-link-email-copy::after {
+  display: none;
+}
+
+.connect-copy-icon {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-color);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateX(-5px);
+}
+
+.connect-link-email:hover .connect-copy-icon,
+.connect-link-email:focus .connect-copy-icon,
+.connect-link-email-copy:hover .connect-copy-icon,
+.connect-link-email-copy:focus .connect-copy-icon {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.connect-copy-icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+.copied-text {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent-color);
+  white-space: nowrap;
+}
+
 .connect-link:hover,
 .connect-link:focus {
   color: var(--accent-color);
   transform: translateX(5px);
   outline: none;
+}
+
+.connect-link-email:hover,
+.connect-link-email:focus,
+.connect-link-email-copy:hover,
+.connect-link-email-copy:focus {
+  transform: none;
 }
 
 .connect-link:focus {
@@ -114,6 +167,7 @@
   position: relative;
   z-index: 1;
 }
+
 
 @media print {
   .connect-section {

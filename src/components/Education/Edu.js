@@ -5,4 +5,6 @@ const Edu = forwardRef((props, ref) => {
     return <EducationSection ref={ref} />
 });
 
+Edu.displayName = 'Edu';
+
 export default Edu;

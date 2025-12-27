@@ -19,4 +19,6 @@ const Header = forwardRef((props, ref) => {
     );
 });
 
+Header.displayName = 'Header';
+
 export default Header;

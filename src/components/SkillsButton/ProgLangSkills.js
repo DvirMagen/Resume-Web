@@ -5,4 +5,6 @@ const ProgLangSkills = forwardRef((props, ref) => {
     return <SkillsSection ref={ref} />
 });
 
+ProgLangSkills.displayName = 'ProgLangSkills';
+
 export default ProgLangSkills;

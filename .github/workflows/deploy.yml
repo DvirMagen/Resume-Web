@@ -8,6 +8,9 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    # Note: API URL is configured in src/utils/sendEmail.js
+    # No environment variables needed for frontend build
+    # API is hosted separately on Vercel at: https://contact-api-indol.vercel.app
 
     steps:
       - name: Checkout source repo
